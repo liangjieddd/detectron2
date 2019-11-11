@@ -1,0 +1,22 @@
+准备数据集
+在datasets/下新建文件夹coco
+文件树：
+coco 
+  -annotations
+      -instances_minival2014
+      -instances_testdev2017
+      -instances_train2014
+  -minival2014
+      -000005.jpg
+      -000020.jpg
+      -...
+  -testdev2017
+      -000025.jpg
+      -000029.jpg
+      -...
+  -train2014
+      -000001.jpg
+      -000002.jpg
+      -...
+  __init__.py   #初始化
+  visual_coco.py   #将注册后的数据集显示出来，随机选取几张图片
