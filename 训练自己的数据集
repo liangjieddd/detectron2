@@ -21,6 +21,13 @@ coco
   __init__.py   #初始化
   visual_coco.py   #将注册后的数据集显示出来，随机选取几张图片
   
+  修改配置文件：
+  修改./detectron2/data/datasets/builtin_meta.py中的_get_coco_instances_meta()函数
+  COCO_CATEGORIES修改为对应的类别；
+  _get_coco_instances_meta函数中80->10
+  
+  config/Base-RCNN-FPN.yaml
+  line33,34 2017->2014
   
   注册数据：
   projects/AL_Defect/register_data.py:
@@ -51,6 +58,9 @@ coco
       img = vis.get_image()[:, :, ::-1]
       cv2.imshow('rr', img)
       cv2.waitKey(0)
+      
+      
+  data_loader.py
       
       
   训练：
@@ -86,6 +96,8 @@ if __name__ == "__main__":
     trainer = DefaultTrainer(cfg)
     trainer.resume_or_load(resume=False)
     trainer.train()
+    
+    
 
   
 
